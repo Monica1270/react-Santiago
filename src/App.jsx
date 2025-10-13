@@ -1,13 +1,15 @@
-import Navbar  from "./componentes/Navbar"
+
 import './App.css'
+import NavbarBs from './componentes/NavbarBS'
 import ItemListContairner from "./componentes/ItemListContainer"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
 
   return (
     <>
-    <Navbar/>
+   <NavbarBs/>
     <ItemListContairner saludo="Bien venido a mi app"/>
 
     </>
