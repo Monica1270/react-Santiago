@@ -10,7 +10,7 @@ function App() {
   return (
     <>
    <NavbarBs/>
-    <ItemListContairner saludo="Bien venido a mi app"/>
+    <ItemListContairner saludo="Bien venido a la app de Santigo"/>
 
     </>
   )

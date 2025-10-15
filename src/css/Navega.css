@@ -1,0 +1,36 @@
+/* Estilo general del navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa logo + links del carrito */
+  padding: 0.5rem 1rem;
+  background-color: #adb5bd;
+}
+
+/* Estilo para los ítems del navbar */
+.nav-item {
+  margin: 0 0.5rem;
+}
+
+/* Estilo para los enlaces */
+.nav-pills {
+  color: #b2dac7;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Estilo del logo */
+.logo {
+  width: 7rem;
+  height: auto;
+  border-radius: 0.6rem 0.6rem  0.6rem 0.6rem;
+ box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem #687fa1;
+}
+
+/* Estilo del carrito */
+.cart-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.5rem;
+}
