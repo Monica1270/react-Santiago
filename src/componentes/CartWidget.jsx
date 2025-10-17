@@ -5,7 +5,7 @@ const CartWidget = ()=>{
     return(
         /* al return no le puse los parentesis y no podia ver el carrito. cuando le puse los parentesis recien ahi pude verlo */
     <div>
-        <MdOutlineAddShoppingCart fontSize={"2rem"} color="#136c43ff"/> 
+        <MdOutlineAddShoppingCart   className="cart-widget " fontSize={"2rem"} color="#2c32c5ff"/> 
          <Badge pill bg="secondary" color="black">1</Badge>
     </div>
     )
