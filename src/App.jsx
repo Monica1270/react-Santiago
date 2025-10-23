@@ -11,9 +11,8 @@ console.log("App")
   return (
     <>
    <NavbarBs/>
-   <ItemCount stock={7}/>
    <ItemListContairner saludo="Bien venido a la app de Santiago"/>
-
+   <ItemCount stock={7}/>  
     </>
   )
 }
