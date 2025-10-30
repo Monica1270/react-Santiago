@@ -2,58 +2,32 @@
 //con esto estamos separando responsabilidades
 
 import React from 'react'
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 const Item = ({producto}) => {
     return(
-        <div>
-           <CardGroup>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
+    <div>
+           <Card style={{ width: '18rem'}}>
+      <Card.Img variant="top" src={producto.img} style={{width: '10rem', height:'10rem'}} />
+      <Card.Body>
+        <Card.Title>{producto.name}</Card.Title>
+        <Card.Text>
+          {producto.descripcion} {producto.tecnica}
+        </Card.Text>
+        <Card.Text>
+         ${producto.precio}.-
+        </Card.Text>
           <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-          <Button variant="info">Info</Button>
-        </Card.Footer>
-      </Card>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
+         {producto.talle}
+        </Card.Text>
           <Card.Text>
-            This card has supporting text below as a natural lead-in to
-            additional content.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-          <Button variant="info">Info</Button>
-        </Card.Footer>
-      </Card>
-      {/* <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card> */}
-    </CardGroup> 
-        </div>
+         {producto.medida} 
+        </Card.Text>
+        <Button variant="primary">Ver más</Button>
+      </Card.Body>
+    </Card>
+   </div>     
     )
 }
 

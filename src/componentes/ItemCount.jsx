@@ -32,7 +32,7 @@ console.log("me ejecuto siempre")
 console.log("me ejecuto una sola vez")
    },[])
    useEffect(() =>{
-    console.log("se ejecuta cuand se monta el componente, y siempre que compra cambie",compra)
+    console.log("se ejecuta cuando se monta el componente, y siempre que compra cambie",compra)
    },[compra])
 return (
   <>
