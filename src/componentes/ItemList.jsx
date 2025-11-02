@@ -6,10 +6,9 @@ function ItemList({data}) {
   //OJO CON ESTO!!!!
     return (
     <div style={{display:'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap'}}>
-        {data.map((productos)=> <Item key={productos.id} producto={productos} />)}
+        {data.map((productos)=><Item key={productos.id} productos={productos}/>)}
 
-    </div>
-  )
-}
+ </div>)
+} 
 
 export default ItemList

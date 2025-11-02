@@ -1,6 +1,6 @@
 const productos = [
     {
-id:	"1",
+id:'01',
 name: "Medias de Argentina",
 descripcion:"Mezcla de poliéster, nailon y elastano para mayor elasticidad, transpirabilidad y ajuste anatómico.",
 talle:" Talle: adultos",
@@ -11,7 +11,7 @@ categoria:"ropa deportiva",
 img: "/imgprodctos/mediasdeArg.png",
 },
     {
-id:	"2",
+id:'02',
 name: "Medias fútbol Adidas Adi 23",
 descripcion:"Mezcla de poliéster, nailon y elastano para mayor elasticidad, transpirabilidad y ajuste anatómico.",
 talle:"Talle: adultos",
@@ -22,7 +22,7 @@ img:"../public/imgproductos/mediasFutbolAdidasadi23.jpg",
 categoria:"ropa deportiva",
 },
 {
-    id:	"3",
+    id:'03',
 name:"Top de entrenamiento",
 descripcion:"Top femenimo de entrenamiento",
 talle:"Talle: M",
@@ -32,7 +32,7 @@ stock:	15,
 img: "../public/imgproductos/topEntrenamiento.png",                                             
 categoria:"ropa deportiva",
 },
-{id:"5",
+{id:'04',
 name:"Calzas cortas Adidas Tf Sho Tight deportiva",
 descripcion:"El suave tejido de punto presenta costuras y cortes estratégicamente situados para un ajuste que estiliza la silueta. La cintura de tiro alto proporciona una cobertura total. Tiene CLIMACOOL, que absorbe y dispersa el sudor para lograr mayor rendimiento y frescura, sin distracciones.",
 talle:	"Talle: M",
@@ -43,7 +43,7 @@ img: "../public/imgprocuctos/tfshotightmdelantero.png ",
 categoria:"ropa deportiva",
 },
 {
-id:	"6",
+id:'05',
 name:"Botines fútbol Adidas Copa Pure 2 Elite",
 descripcion:"Encontrá tu rapidez para expresarte de verdad en el campo. Sentí la adrenalina con los botines adidas F50, diseñados para la velocidad. Con un llamativo estampado Sprintgrid, la parte superior Fiberskin de estos botines de fútbol League cuenta con un cuello sin cordones adaptable para un ajuste firme y un golpeo limpio. La suela Sprintplate liviana proporciona una gran velocidad en múltiples superficies.",
 talle:	"Telle: 38.5",
@@ -54,7 +54,7 @@ img: "../public/imgprocuctos/botinesfútboladidascopapuredos.png",
 categoria:	"zapatillas",
 },
 {
-id:	"7",
+id:'06',
 name:"Adidas X Crazyfast Messi Elite",
 descripcion:"Placa de la suela que incorpora una imitación de lámina de fibra de carbono.",
 talle:	"Talle: 43",
@@ -65,7 +65,7 @@ img:"../public/imgprocuctos/xcrazyfastMessi.png",
 categoria:"zapatillas",
 },
 {
-id:	"8",
+id:'07',
 name:"Five Ten Sleuth DLX ",
 descripcion:"Es ideal para ciclistas de MTB con pedales de plataforma que buscan un calzado polivalente para paseos urbanos y recorridos de dificultad media, no para uso agresivo o en terrenos muy técnicos.",
 talle:	"Talle: 42",
@@ -76,7 +76,7 @@ img:"../ public/imgprocuctos/fivetenSleuthDlx.png ",
 categoria:	"zapatillas",
 },
 {	
-id:	"10",
+id:'08',
 name:"Aerografía mariposas",
 tecnica:"Técnica aerografía",
 medida:	"Medidas: 30 cm x 24 cm",
@@ -88,7 +88,7 @@ categoria:"cuadros",
 },
 {	
 	
-id:	"11",
+id:'09',
 name:"Flores Peruana",
 tecnica:"Técnica al óleo",
 medida:	"Medidas: 26 cm x 26cm",
@@ -100,7 +100,7 @@ categoria:"cuadros",
 },
 
 {
-id:	"12",
+id:'10',
 name:"Replica Guayasamin",
 tecnica:"Acrílico",
 medida:	"Medidas: 35 cm x 30cm",
@@ -111,19 +111,19 @@ img:"../public/imgprocuctos/guayasamin.jpg",
 categoria:"cuadros",
 },
 {
-id:	"13",
-name:"Replica Guayasamindos",
+id:'11',
+name:'Replica Guayasamindos',
 tecnica:"Técnica al óleo",
 medida:	"Medidas: 33,80 cm x 280,70cm",
 varilla:"Varilla Chata",
 precio :80000,
 stock:	1,
-img:"../ public/imgprocuctos/guayasamindos.jpg ",
+img:'../ public/imgprocuctos/guayasamindos.jpg',
 categoria:"cuadros",
 	},
 
 {
-id:	"14",
+id:'12',
 name:"África algibe",
 tecnica:"Técnica al óleo",
 medida:	"Medidas: 76 cm x 40 cm",
@@ -134,10 +134,11 @@ img:"../public/imgprocuctos/africaaljibe.png",
 categoria:"cuadros",
 },
 ]
- /* export const getProductos = ()=> {
+
+ export const getProductos = ()=> {
     let error = false /* con este false el sistema entiende que no hay error
                        va directamente a else para resolver */
-    /*  return new Promise ((resolve, rejet)=>{
+   return new Promise ((resolve, rejet)=>{
         setTimeout(()=>{
             if(error){
                 console.log('🆘el error existe')
@@ -148,12 +149,13 @@ categoria:"cuadros",
             }
 
         },2000)
-    }) */
-
+    }) } 
+ 
  export const getOneProductos =(id)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
-            let productos= productos.find((productos)=>resolve(productos))
+            let prod= productos.find((producto)=>producto.id===id)
+            resolve(prod)
         },2000)
     })
 }
