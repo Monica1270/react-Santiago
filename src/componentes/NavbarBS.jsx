@@ -16,13 +16,13 @@ function NavbarBs() {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item className='nav-item'>
-        <Nav.Link eventKey="zapatillas" className=' nav-pills '>Zapatillas</Nav.Link>
+        <Nav.Link as={NavLink} to='/categoria/zapatillas'  className=' nav-pills '>Zapatillas</Nav.Link>
       </Nav.Item>
       <Nav.Item className='nav-item'>
-        <Nav.Link eventKey="ropa deportiva" className='nav-pills'>Ropa deportiva</Nav.Link>
+        <Nav.Link as={NavLink} to='/categoria/ropa deportiva'  className='nav-pills'>Ropa deportiva</Nav.Link>
       </Nav.Item>
       <Nav.Item className='nav-item'>
-        <Nav.Link eventKey="cuadros" className='nav-pills'>Cuadros</Nav.Link>
+        <Nav.Link s={NavLink} to='/categoria/ropa cuadros' className='nav-pills'>Cuadros</Nav.Link>
       </Nav.Item>
       <div className='cart-widget'>
       <CartWidget/>
