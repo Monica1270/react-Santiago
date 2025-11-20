@@ -9,6 +9,7 @@ import ItemDetailContainer from './componentes/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './componentes/Error';
 import { CartProvider } from './contex/CartContext';
+import Checkout from './componentes/Checkout';
 /* componente padre y nos da la funcionalidad de navegar, routes es el agrupador de rutas,
 route es el hijo de routes y es para una sola ruta
 */
@@ -25,9 +26,10 @@ function App() {
       <Routes>
         <Route path='/' element={<ItemListContairner saludo='Bien venido a la app de Santiago' />} />{/*le estoy diciendo al sistema
         que lo primero que muestre es el listContainer por eso se pone la barra sola*/}
-        <Route path='/catergoria/:typeCategoria' element={<ItemListContairner saludo='Bien venido a la app de Santiago' />} />
+        <Route path='/catergoria/:typeCategoria' element={<ItemListContairner saludo='Bien venido a la categoria' />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} /> {/*en esta ruta le estoy diciendo al sistema
         que muestre cuando el usuario  */}
+        <Route path='/checkout' element={<Checkout/>}/>
         <Route path='*' element={<Error />} />
       </Routes>
       </CartProvider>

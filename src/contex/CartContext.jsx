@@ -5,15 +5,15 @@ import { createContext, useState } from "react";
 /* import { Children, createContext, useState } from "react"; */
 //lo voy a crear y exportar a la vez el contexto
 // es una especie de guardado sin nececidad de estar pasando por props
+
 export const CartContext = createContext()
 //segundo crear al proveedor es un componente especial, es el encargado 
 // de envolver los componentes de nuestra aplicacion que necesitan acceder al carrito
 //cart se refiere al carrito y provider es proveedor
+
 export const CartProvider = ({children})=>{
     //declaro el estado del carrito. El carrito tiene que ser una array
-
     const [cart, setCart]=useState([])
-    
     //funcion para agregar al carrito
     //es una funcion dinamica y le estoy dicendo que reciba los parametros item y qty que significa quantity
     const addItem = (item, qty) =>{
@@ -65,11 +65,19 @@ export const CartProvider = ({children})=>{
     //si lo encuentra pone true y si no lo encuentra pone false
     return cart.some((prod)=> prod.id === id)
     }
+    // esto es el precio todal
+ const total = ()=>{
+return cart.reduce((acc, prod)=>(acc += prod.quantity * prod.price),0)
+ }
+ //calcular cantidad
+ const cartQuantity = ()=> {
+    return cart.reduce((acc, prod)=> acc += prod.quantity,0)
+ }
     return(
         //con esta etiqueta le estoy dando un rol de proveedor de datos. Le estoy diciendo que va a ser el proeeveodr de mi contexto
         // si yo no lo escribo como etiqueta el sistema lo interpreta como un componente
-        <CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart }}>
-           {children}
+        <CartContext.Provider value={{cart, addItem, removeItem, clear, total, cartQuantity}}>
+           {children }
         </CartContext.Provider>
 
     )

@@ -19,7 +19,7 @@ const [purchase, setPurchese]= useState(false)
   }
   return (
     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', width:'18rem'}}>
-      <h1>Detalle de: {detalle.name} </h1>
+      <h1>Detalle de: {detalle.name}</h1>
       <img className="card-img-top" src={detalle.img} alt={detalle.name} />
       <p>{detalle.descripcion}</p>
       <p>Técnica:{detalle.tecnica}</p>

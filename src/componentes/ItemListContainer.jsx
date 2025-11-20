@@ -7,6 +7,8 @@ import { getProductos } from "../mok/AsyncService"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import LoaderComponent from "./LoaderComponent"
+import { collection, getDocs, where, query} from "firebase/firestore"
+import {db} from '../service/firebase'
 
 
 //una props que sa va a pasar su padre
@@ -14,8 +16,34 @@ const ItemListContairner = (props) => {
     const [data, setData] = useState([])
     const [loader, setLoader]= useState(false)
     const {typeCategoria}= useParams()
-    
+   
+   
+    //FIREBASE
     useEffect(()=>{
+        setLoader(true)
+        //conectarnos con nuestra coleccion y la hacemos condicional 
+        //si existe la categoriaque me filtre si ?type existe si no : existe
+        //where si miro el console dice query , el metodo where le dice al sistema que vaya a un campo especial en este caso es categoria
+        const productsCollection = typeCategoria
+    ? query(collection(db, "productos"), where("categoria","==", typeCategoria))
+     :collection(db,"productos")   
+        // pido documentos de firebase
+        getDocs(productsCollection)
+        .then((res)=>{
+            console.log(res.docs)
+            const list = res.docs.map((doc)=>{
+                return {
+                    id:doc.id,
+                    ...doc.data()
+
+                }
+            })
+            setData(list)
+        })
+        .catch((error)=> console.log(error))
+        .finally(()=> setLoader(false))
+    },[typeCategoria])
+/*     useEffect(()=>{
         // enciendo el loader(cree un componente de advertencias)
         setLoader(true)
         // se ejecuta la logica
@@ -33,9 +61,9 @@ setData(res)
             .catch((error) => console.log("error"))
             // si cae en el then o en catch apagamos el loader con false
             .finally(()=>setLoader(false))
-    }, [typeCategoria])
+    }, [typeCategoria]) */
     /*el type esta atento al cambio de categoria*/
-    console.log(data, 'estado')
+    //console.log(data, 'estado')
 
     return (
         <>

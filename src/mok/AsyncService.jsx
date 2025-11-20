@@ -101,7 +101,7 @@ categoria:"cuadros",
 
 {
 id:'10',
-name:"Replica Guayasamin",
+name:"Réplica Guayasamin",
 tecnica:"Acrílico",
 medida:"Medidas: 35 cm x 30 cm",
 varilla:"Chata",
@@ -112,7 +112,7 @@ categoria:"cuadros",
 },
 {
 id:'11',
-name:'Replica Guayasamindos',
+name:'Réplica Guayasamindos',
 tecnica:"óleo",
 medida:"Medidas: 33,80 cm x 28,70 cm",
 varilla:"Chata",
