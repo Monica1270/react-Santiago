@@ -50,7 +50,7 @@ export const CartProvider = ({children})=>{
     //le estamos diciendo al sistema por cada producto que hay en la array 
     //se cumple una condicion prod.id sea distinto al id que viene por parametro
     // cuando encuentra uno igual lo saca
-    const removeItem = (id) =>{
+    const removeItem = (id) => {
     setCart(cart.filter((prod)=> prod.id !== id))
     }
     // funcion que limpia el carrito
@@ -59,7 +59,7 @@ export const CartProvider = ({children})=>{
         setCart([])
     }
     //funcion que devuevuelve un buleano si ese item existe o no en el carrito
-    const isInCart = (id) => {
+    const isInCart = (id) =>{
     //el metodo some nos devuelve true o false
     //el prod de la array es comparado por la funcion prod.id se igual al id que viene por parametro 
     //si lo encuentra pone true y si no lo encuentra pone false
@@ -73,10 +73,18 @@ return cart.reduce((acc, prod)=>(acc += prod.quantity * prod.price),0)
  const cartQuantity = ()=> {
     return cart.reduce((acc, prod)=> acc += prod.quantity,0)
  }
+ const itemQuantity = (id)=>{
+    const itemInCart = cart.find((productos)=> productos.id === id)
+ if (itemInCart){
+    return itemInCart.quantity
+ }else{
+    return 0
+ }
+}
     return(
         //con esta etiqueta le estoy dando un rol de proveedor de datos. Le estoy diciendo que va a ser el proeeveodr de mi contexto
         // si yo no lo escribo como etiqueta el sistema lo interpreta como un componente
-        <CartContext.Provider value={{cart, addItem, removeItem, clear, total, cartQuantity}}>
+        <CartContext.Provider value={{cart, addItem, removeItem, clear, total, cartQuantity, itemQuantity}}>
            {children }
         </CartContext.Provider>
 

@@ -30,6 +30,9 @@ console.log("ItemCount")
 
 return (
   <>
+  {
+stock > 0 ?
+  <>
     <div>
         <button className='btn btn-danger'  onClick={resta} disabled={count === 0}>-</button>
         {/* con disabled le estoy diciendo al contador que se detenga en 0 */}
@@ -39,6 +42,9 @@ return (
     </div>
     <button className='btn btn-primary' onClick={ejecutarCompra} disabled={count === 0 || stock === 0 }>Comprar</button>
     </>
+    :<p> Lo lamento, no hay unidades disponibles por el momento</p>
+ }
+      </>
   )
 
 }

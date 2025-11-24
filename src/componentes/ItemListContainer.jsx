@@ -3,11 +3,11 @@
 // tiene que recibir una props y renderizarla. Este componente lo unico que tiene que retornar 
 
 import { useEffect, useState } from "react"
-import { getProductos } from "../mok/AsyncService"
+import { getProductos, productos } from "../mok/AsyncService"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import LoaderComponent from "./LoaderComponent"
-import { collection, getDocs, where, query} from "firebase/firestore"
+import { collection, getDocs, where, query, addDoc} from "firebase/firestore"
 import {db} from '../service/firebase'
 
 
@@ -30,7 +30,7 @@ const ItemListContairner = (props) => {
         // pido documentos de firebase
         getDocs(productsCollection)
         .then((res)=>{
-            console.log(res.docs)
+            //console.log(res.docs)
             const list = res.docs.map((doc)=>{
                 return {
                     id:doc.id,
@@ -64,14 +64,20 @@ setData(res)
     }, [typeCategoria]) */
     /*el type esta atento al cambio de categoria*/
     //console.log(data, 'estado')
-
+const subirData = ()=>{
+   console.log('subiendo data!!') 
+   const prodSubir = collection(db, 'productos')
+   productos.map((prod)=> addDoc(prodSubir,prod))
+}
     return (
         <>
+{/*         este boton se usa una sola vez no debe presentarse en el final  */}
+        <button onClick={subirData}>Subir data</button>
         {
             loader
             ? <LoaderComponent/>
             :<div>
-            <h1>{props.saludo}{typeCategoria && <span>{typeCategoria}</span>}</h1>
+            <h1>{props.saludo}{typeCategoria && <span style={{textTransform:'capitalize'}}>{typeCategoria}</span>}</h1>
        {/*     {data.map((produtos)=> <p key={produtos.id}>{produtos.name}</p>)} */}   {/* con el map estoy mostrando en pantalla */}
             <ItemList data={data} />
         </div>

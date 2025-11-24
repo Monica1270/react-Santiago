@@ -1,16 +1,15 @@
-# React + Vite
+# APP SANTIAGO 🛒
+Etapa final de mi aprendizaje  de React.jsx. Realización de un carrito de compra
+![imageApp](/public/logo-santiago.jpg)
+### Instalación 
+1. Clone el repositorio.
+2. Hacer el comando `cd react-Santiago` para moverse a la carpteta raíz del proyecto.
+3. Instale dependencia con el comando `npm install`.
+4. Levantar el proyecto de manera local ejecute el comando `npm run dev`
+### Librerías utilizadas 
+-[Firebase](https://firebase.google.com/docs/web/setup?hl=es-419#available-libraries): utilizado como base de datos
+-[React Router Dom](https://www.npmjs.com/package/react-router-dom): utilizado para la navegación por rutas del proyecto
+-[Bootstrap, y Bootstrap Reac](https://react-bootstrap.netlify.app/): para darle estilos al navegador y las tarjetas
+-[React icons](https://react-icons.github.io/react-icons/): utilicé el carrito de esta página
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Desarrollado por Mónica Lombardi

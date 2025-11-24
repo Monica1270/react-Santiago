@@ -1,22 +1,23 @@
 import React, {useContext} from 'react'
 import {CartContext} from '../context/createContext'
-import { BsFillCartCheckFill } from "react-icons/bs"
-import { MdDeleteForever } from "react-icons/md"
+import { Link } from 'react-router-dom'
+/* import { BsFillCartCheckFill } from "react-icons/bs"
+import { MdDeleteForever } from "react-icons/md" */
 const CartView = ()=> {
     const {cart, removoItem, clear, total}= useContext(CartContext)
     return(
         <div>
-                <h1> Tu carrito <BsFillCartCheckFill /> </h1>
+                <h1> Tu carrito </h1>
         <div>
         {
             cart.map((compra)=>(
                 <div key={compra.id} style={{display:'flex', justifyContent:'space-between'}}>
                     <img src={compra.img} alt={compra.name} style={{width:'9rem'}}/>
                     <span>{compra.name}</span>
-                    <span>${compra.price}</span>
-                    <span>cantidad: {compra.queantity}</span>
-                    <span>precio final: ${compra.queantity * compra*precio}</span>
-                    <button className='btn btn-secundary' onClick={()=> removoItem(compra.id)}><MdDeleteForever /></button>
+                    <span>${compra.precio}</span>
+                    <span>cantidad: {compra.quantity}</span>
+                    <span>precio final: ${compra.quantity * compra*precio}</span>
+                    <button className='btn btn-secundary' onClick={()=> removoItem(compra.id)}></button>
                 </div>
             ))
         }

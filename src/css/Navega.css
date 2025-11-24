@@ -1,11 +1,11 @@
 /* Estilo general del navbar */
-.navbar {
+/* .contenedor {
   display: flex;
   align-items: center;
   justify-content: space-between; /* separa logo + links del carrito */
-  padding: 0.5rem 1rem;
-  background-color: #adb5bd;
-}
+ /* padding: 0.5rem 1rem;
+  background-color: #0d6efd;
+}   */
 
 /* Estilo para los ítems del navbar */
 .nav-item {
@@ -13,11 +13,11 @@
 }
 
 /* Estilo para los enlaces */
-.nav-pills {
+/* .nav-pills {
   color: #dfe5e7;
   font-weight: 500;
   text-decoration: none;
-}
+} */
 
 /* Estilo del logo */
 .logo {
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
-margin-right: 2rem;
+  margin-right: 2rem;
 }
 .btn {
   box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #687fa1;

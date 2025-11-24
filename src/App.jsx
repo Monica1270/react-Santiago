@@ -3,12 +3,13 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarBs from './componentes/NavbarBS';
 import ItemListContairner from "./componentes/ItemListContainer";
-import ItemCount from "./componentes/ItemCount"
-import withLogging from './hoc/withLogging'
+import ItemCount from "./componentes/ItemCount" 
+import withLogging from './hoc/withLogging' 
 import ItemDetailContainer from './componentes/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './componentes/Error';
 import { CartProvider } from './contex/CartContext';
+
 import Checkout from './componentes/Checkout';
 /* componente padre y nos da la funcionalidad de navegar, routes es el agrupador de rutas,
 route es el hijo de routes y es para una sola ruta
@@ -29,6 +30,7 @@ function App() {
         <Route path='/catergoria/:typeCategoria' element={<ItemListContairner saludo='Bien venido a la categoria' />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} /> {/*en esta ruta le estoy diciendo al sistema
         que muestre cuando el usuario  */}
+       {/*  <Route path='/cart' element={<CartContainer/>}/> */}
         <Route path='/checkout' element={<Checkout/>}/>
         <Route path='*' element={<Error />} />
       </Routes>
