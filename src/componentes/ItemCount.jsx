@@ -17,7 +17,7 @@ import {useState,useEffect} from 'react'
 }
 
 const resta = ()=> {
-  if(count >0){
+  if(count > 0){
   setCount(count-1)
 }
   }

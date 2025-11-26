@@ -19,12 +19,14 @@ const ItemDetail = ({ detalle }) => {
     setPurchese(true)
     addItem(detalle, cantidad)
     Swal.fire({
-      position: "top-end",
+  position: "top-end",
   icon: "success",
-  title: 'Agregaste ${detalle.cantidad} al carrito',
+  title:`Agregaste al carrito ${detalle.name}`,
   showConfirmButton: false,
   showCancelButton: false,
-  timer: 1500
+  timer: 2500,
+  background:"grey"
+
     })
   }
   const stockActualizado = detalle.stock - itemQuantity(detalle.id)
@@ -33,9 +35,7 @@ const ItemDetail = ({ detalle }) => {
       <h1>Detalle de: {detalle.name}</h1>
       <img className="card-img-top" src={detalle.img} alt={detalle.name} />
       <p>{detalle.descripcion}</p>
-      <p>Técnica:{detalle.tecnica}</p>
-      <p>Talle:{detalle.talle} </p>
-      <p>Medidas: {detalle.medida} </p>
+      
       <p>${detalle.precio},00.- </p>
       <p><Badge bg="secondary">Stock disponible: {detalle.stock}</Badge>  </p>
       <p>Stock disponible: {stockActualizado}</p>

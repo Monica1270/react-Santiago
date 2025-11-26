@@ -11,5 +11,6 @@ Etapa final de mi aprendizaje  de React.jsx. Realización de un carrito de compr
 -[React Router Dom](https://www.npmjs.com/package/react-router-dom): utilizado para la navegación por rutas del proyecto
 -[Bootstrap, y Bootstrap Reac](https://react-bootstrap.netlify.app/): para darle estilos al navegador y las tarjetas
 -[React icons](https://react-icons.github.io/react-icons/): utilicé el carrito de esta página
-
+###
+-[Verce;](https://react-santiago.vercel.app/)
 Desarrollado por Mónica Lombardi

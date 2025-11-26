@@ -1,16 +1,16 @@
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarBs from './componentes/NavbarBS';
 import ItemListContairner from "./componentes/ItemListContainer";
+import NavbarBS from './componentes/NavbarBS';
+import ItemDetailContainer from './componentes/ItemDetailContainer';
 import ItemCount from "./componentes/ItemCount" 
 import withLogging from './hoc/withLogging' 
-import ItemDetailContainer from './componentes/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './componentes/Error';
 import { CartProvider } from './contex/CartContext';
-
 import Checkout from './componentes/Checkout';
+import CheckoutRHF from './componentes/CheckoutRhf';
 /* componente padre y nos da la funcionalidad de navegar, routes es el agrupador de rutas,
 route es el hijo de routes y es para una sola ruta
 */
@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
     <CartProvider> 
-      <NavbarBs /> {/* de este orden tiene que ir, asi despues se ve de esta forma en el dom */}
+      <NavbarBS /> {/* de este orden tiene que ir, asi despues se ve de esta forma en el dom */}
       
 {/*         la etiqueta CartProvider le estamos dando acceso a los componentes y sus hijos */}
       <Routes>
@@ -30,8 +30,8 @@ function App() {
         <Route path='/catergoria/:typeCategoria' element={<ItemListContairner saludo='Bien venido a la categoria' />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} /> {/*en esta ruta le estoy diciendo al sistema
         que muestre cuando el usuario  */}
-       {/*  <Route path='/cart' element={<CartContainer/>}/> */}
-        <Route path='/checkout' element={<Checkout/>}/>
+       {/* <Route path='/cart' element={<CartContainer/>}/>  */}
+        <Route path='/checkout' element={<CheckoutRHF/>}/>
         <Route path='*' element={<Error />} />
       </Routes>
       </CartProvider>

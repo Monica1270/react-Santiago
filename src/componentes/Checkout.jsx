@@ -28,7 +28,7 @@ setError('Complete los campos ')
     setError(null)
         let order ={
             comprador: buyer,
-            compar: cart,
+            compra: cart,
             total: total(),
             fecha: serverTimestamp()
         }

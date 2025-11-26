@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
 import { NavLink } from 'react-router-dom';
-function NavbarBs() {
+function NavbarBS() {
   return (
     <Navbar  expand="lg" className="bg-body-tertiary">
     
@@ -35,4 +35,4 @@ function NavbarBs() {
   );
 }
 
-export default NavbarBs;
+export default NavbarBS;

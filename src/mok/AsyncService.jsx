@@ -137,24 +137,26 @@ export const productos = [
     },
 ]
 
-export const getProductos = () => {
-    let error = false /* con este false el sistema entiende que no hay error
+export const getProductos = (id)=>{
+   /* let error = false  con este false el sistema entiende que no hay error
                        va directamente a else para resolver */
-    return new Promise((resolve, rejet) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
-            if (error) {
+          /*   if (error) {
                 console.log('🆘el error existe')
                 rejet('🆘, hubo un error')
             } else {
                 console.log('No, hay error, se resuelve')
                 resolve(productos)
-            }
+            } */
+           let prod= productos.find((producto)=> producto.id === id)
+           resolve(prod)
 
         }, 2000)
     })
 }
 
-export const getOneProductos = (id) => {
+/* export const getOneProductos = (id) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             let prod = productos.find((producto) => producto.id === id)
@@ -162,5 +164,5 @@ export const getOneProductos = (id) => {
         }, 2000)
     })
 }
-
+ */
 

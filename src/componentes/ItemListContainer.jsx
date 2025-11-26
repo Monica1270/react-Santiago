@@ -8,11 +8,11 @@ import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import LoaderComponent from "./LoaderComponent"
 import { collection, getDocs, where, query, addDoc} from "firebase/firestore"
-import {db} from '../service/firebase'
+import {db} from '../service/firebase.jsx'
 
 
 //una props que sa va a pasar su padre
-const ItemListContairner = (props) => {
+const ItemListContairner = (props) =>{
     const [data, setData] = useState([])
     const [loader, setLoader]= useState(false)
     const {typeCategoria}= useParams()
@@ -43,7 +43,7 @@ const ItemListContairner = (props) => {
         .catch((error)=> console.log(error))
         .finally(()=> setLoader(false))
     },[typeCategoria])
-/*     useEffect(()=>{
+  useEffect(()=>{
         // enciendo el loader(cree un componente de advertencias)
         setLoader(true)
         // se ejecuta la logica
@@ -61,19 +61,18 @@ setData(res)
             .catch((error) => console.log("error"))
             // si cae en el then o en catch apagamos el loader con false
             .finally(()=>setLoader(false))
-    }, [typeCategoria]) */
-    /*el type esta atento al cambio de categoria*/
-    //console.log(data, 'estado')
-const subirData = ()=>{
-   console.log('subiendo data!!') 
+    }, [typeCategoria]) 
+  
+
    const prodSubir = collection(db, 'productos')
-   productos.map((prod)=> addDoc(prodSubir,prod))
-}
+   productos.map((productos)=> addDoc(prodSubir, productos))
+
     return (
         <>
 {/*         este boton se usa una sola vez no debe presentarse en el final  */}
-        <button onClick={subirData}>Subir data</button>
-        {
+        {/*<button onClick={subirData}>Subir data</button>
+         */}
+         {
             loader
             ? <LoaderComponent/>
             :<div>
